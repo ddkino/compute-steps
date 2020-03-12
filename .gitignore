@@ -1,0 +1,36 @@
+# Local config files
+config/
+./deployment-config.json
+deployment-config.json
+
+package-lock.json
+
+*.DS_Store
+*~
+*#
+
+npm-debug.log
+
+TODO
+
+# Private keys
+*.ppk
+
+# modules
+*/node_modules
+node_modules/*
+
+# Mongo dump
+mongodb/dump*
+
+# sass
+*/.sass-cache
+
+./bower_components
+./newrelic.js
+./newrelic_agent.log
+.idea
+dist
+
+bazel-out
+yarn-error.log
