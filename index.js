@@ -1,15 +1,13 @@
 const _ = require('underscore')
+const data = require('./data.json')
 
 const insertActivityWalkArray = async (req_body, authUser) => {
   console.log(req_body)
   let must_update_stats = false;
 
-  if (!authUser || (String(authUser._id) != String(req_body.user_id) && !authUser.admin && !authUser.global_admin)) {
-    throw new Error('not authorized');
-  }
 
   let stepsArray = req_body.stats;
-  const user_id = new ObjectId(req_body.user_id);
+  const user_id = req_body.user_id;
 
   // normalize step array
   if (
@@ -257,4 +255,4 @@ const insertActivityWalkArray = async (req_body, authUser) => {
 };
 
 
-insertActivityWalkArray([], {})
+insertActivityWalkArray(data, {})
